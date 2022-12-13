@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useRef } from "react";
+import "./styles.css";
+import Screen1 from "./Screen1";
+import { Box } from "./box";
+import Screen2 from "./Screen2";
+import Screen3 from "./Screen3";
+import Screen4 from "./Screen4";
+import Services from "./Services";
 
-function App() {
+const SnapParent = React.forwardRef(({ ...props }, ref) => (
+  <div ref={ref} {...props} className="snap-parent-y-mandatory">
+    {props.children}
+  </div>
+));
+
+const Container = ({ children }) => {
+  const ref = useRef();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        position: "relative"
+      }}
+    >
+      <SnapParent
+        ref={ref}
+        style={{
+          position: "absolute"
+        }}
+      >
+        {children}
+      </SnapParent>
     </div>
+  );
+};
+
+function ScrollSample() {
+  return (
+    <Container>
+      <Box >
+      <Screen1 /></Box>
+      <Box ><Screen2/></Box>
+      <Box> <Screen3 /></Box>
+      <Box></Box>
+    </Container>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <div>
+      <ScrollSample />
+    </div>
+  );
+}

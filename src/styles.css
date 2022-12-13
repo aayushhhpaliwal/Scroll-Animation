@@ -42,3 +42,17 @@ body {
     flex: none;
   }
   
+  .circle {
+    animation: rotation 5s infinite linear;
+    width:150px;
+  }
+
+
+
+.mae1{
+  width: 50px;
+}
+
+.screen1r{
+  display: none;
+}

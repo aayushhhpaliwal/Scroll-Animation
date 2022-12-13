@@ -37,11 +37,11 @@ const Container = ({ children }) => {
 function ScrollSample() {
   return (
     <Container>
-      <Box >
+      <Box id="hideMeAfter5Seconds">
       <Screen1 /></Box>
       <Box ><Screen2/></Box>
       <Box> <Screen3 /></Box>
-      <Box></Box>
+      <Box><Screen4 /></Box>
     </Container>
   );
 }

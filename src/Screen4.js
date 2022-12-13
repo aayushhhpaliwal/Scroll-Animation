@@ -1,18 +1,20 @@
-import React from "react";
 
-function makeDog(e) {
-    e.target.setAttribute( 'src', 'https://source.unsplash.com/LYK3ksSQyeo');
-    e.target.setAttribute('alt', 'dog');
+import React from 'react'
+import Cir from "./img/3.png"
+import Logo from "./img/mae.png"
+
+function Screen4() {
+    function makeDog(e) {
+    e.target.setAttribute( 'src', '/mae.png');
+    e.target.setAttribute('alt', 'Mae');
+
   }
   
-  const Services = (
-  
+  return (
     <div>
-  <img src="https://source.unsplash.com/Qmox1MkYDnY" alt="Screen4" onClick={makeDog}
-    />
-      <p>Check</p>
+    <img src={Cir} alt="Screen4" className='circle' onClick={makeDog}  />
     </div>
-  
-  );
+  )
+}
 
-  export default Services
+export default Screen4

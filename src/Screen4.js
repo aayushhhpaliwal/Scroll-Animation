@@ -1,7 +1,6 @@
 
 import React from 'react'
 import Cir from "./img/3.png"
-import Logo from "./img/mae.png"
 
 function Screen4() {
     function makeDog(e) {
